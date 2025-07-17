@@ -53,6 +53,40 @@ Navigate to the `basics/` folder. We'll run and discuss each app:
 - **Components:**
   - **Python script:** Sends text to AOAI TTS, downloads and saves the audio file.
 
+### 5. `translation_api.py`
+
+**Overview:**  
+This script demonstrates how to use Azure's Translator service via its REST API to translate text between languages.
+
+**How to run:**
+```bash
+cd basics
+python3 translation_api.py
+```
+
+**How it works:**  
+- Prompts you to enter the text you want to translate and the target language code (e.g., `fr` for French, `es` for Spanish).
+- You must update the following line in the script to input your own text for translation:
+  ```python
+  body = [{
+      # 'text': 'I would really like to drive your car around the block a few times!'
+      'text': "hi my name is phillip and im from texas! where are you from"
+  }]
+  ```
+  Replace the value of `'text'` with your own sentence.
+- Calls the Translator REST API with your input.
+- Displays the translated text in the terminal.
+
+**Example:**  
+![Translation Example](basics/translation_example.png)  
+*Enter your prompt in the terminal when asked.*
+
+**To call the Translator service via the REST API, you need to include:**
+- Your Azure subscription key and endpoint URL.
+- The text to translate and the target language code in the request body.
+- Proper headers for authentication and content type.
+
+See the script for details on how these are set up.
 ---
 
 ## Part 2: Explore the Demos
